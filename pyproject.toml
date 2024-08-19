@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "dev-llm"
+version = "0.1.0"
+description = ""
+authors = ["Jun Luo <luo.junius@gmail.com>"]
+readme = "README.md"
+packages = [{include = "dev_llm"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+transformers = "^4.44.0"
+sentence-transformers = "^3.0.1"
+torch = "^2.4.0"
+local-gemma = "^0.2.0"
+accelerate = "^0.33.0"
+quanto = "^0.2.0"
+pydantic = "^2.8.2"
+uvicorn = "^0.30.5"
+fastapi = "^0.112.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
