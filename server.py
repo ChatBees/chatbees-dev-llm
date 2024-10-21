@@ -5,6 +5,8 @@ from fastapi import FastAPI, Body
 from pydantic import BaseModel
 from typing import Any, List, Dict
 
+from llm_factory import get_llm
+
 # if INFO message is not logged, check if some place calls logging at startup.
 # for example, global VectorStoreCache instance. could set force=True in
 # basicConfig, but the logs before config will be lost. better to fix the init.
@@ -15,9 +17,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format=format)
 
 app = FastAPI()
 
-from local_small_llm import LocalSmallLLM
-
-llm = LocalSmallLLM()
+llm = get_llm()
 
 # the embedding texts and chat messages (question/answer) may include arbitrary
 # string. encode them to make sure FastAPI can process it.
