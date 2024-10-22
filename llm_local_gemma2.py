@@ -58,7 +58,7 @@ class LocalGemma2LLM(LocalSmallLLM):
             encode_answer = self.chat_tokenizer(answer, return_tensors='pt')
             output_tokens = len(encode_answer['input_ids'][0])
 
-        logging.info(f"answer messages {len(messages)} last_message={messages[len(messages)-1]} "
+        logging.info(f"answer {len(messages)} messages, last_message={messages[len(messages)-1]}, "
                      f"tokens={input_tokens}:{output_tokens} answer={answer}")
 
         return answer, input_tokens, output_tokens

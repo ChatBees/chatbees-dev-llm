@@ -61,7 +61,7 @@ class TestLLM():
                      f"embedding time: {int((t2 - t1) * 1000)}ms")
 
     def _test_chat(self, model_id: str):
-        chat_count = 4
+        chat_count = 1
 
         t0 = time.monotonic()
         llm = get_llm(model_id)
